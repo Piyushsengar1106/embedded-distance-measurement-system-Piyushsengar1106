@@ -10,6 +10,8 @@ void setup() {
     Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
+
+    Serial.println("Ultrasonic Distance Measurement Started");
 }
 
 void loop() {
@@ -23,4 +25,10 @@ void loop() {
 
     duration = pulseIn(ECHO_PIN, HIGH);
     distance = (duration * 0.0343) / 2;
+
+    Serial.print("Distance: ");
+    Serial.print(distance);
+    Serial.println(" cm");
+
+    delay(500);
 }
