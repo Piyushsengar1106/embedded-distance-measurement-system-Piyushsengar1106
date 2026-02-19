@@ -10,9 +10,14 @@ void setup() {
     Serial.begin(9600);
     pinMode(TRIG_PIN, OUTPUT);
     pinMode(ECHO_PIN, INPUT);
-
-    Serial.println("Ultrasonic Sensor Initialized");
 }
 
 void loop() {
+
+    digitalWrite(TRIG_PIN, LOW);
+    delayMicroseconds(2);
+
+    digitalWrite(TRIG_PIN, HIGH);
+    delayMicroseconds(10);
+    digitalWrite(TRIG_PIN, LOW);
 }
