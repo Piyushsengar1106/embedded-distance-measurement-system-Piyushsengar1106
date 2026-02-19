@@ -4,7 +4,7 @@
 /**
  * @file main.cpp
  * @brief Embedded Distance Measurement using Ultrasonic Sensor
- * @author Piyush-sengar
+ * @author Piyush sengar
  * @date 2026-02-19
  *
  * @details
