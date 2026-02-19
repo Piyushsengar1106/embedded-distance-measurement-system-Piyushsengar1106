@@ -4,6 +4,9 @@
 #define TRIG_PIN 9
 #define ECHO_PIN 10
 
+long duration;
+float distance;
+
 void setup() {
 }
 
