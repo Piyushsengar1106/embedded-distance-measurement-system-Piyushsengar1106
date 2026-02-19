@@ -1,9 +1,10 @@
 #include <Arduino.h>
+#include <sys/_intsup.h>
 
 /**
  * @file main.cpp
  * @brief Embedded Distance Measurement using Ultrasonic Sensor
- * @author Piyush
+ * @author Piyush-sengar
  * @date 2026-02-19
  *
  * @details
@@ -16,8 +17,8 @@
 #define ECHO_PIN 10
 
 // Variables for measurement
-long duration;
-float distance;
+unsigned long duration;
+unsigned long distance;
 
 /**
  * @brief Initializes serial communication and sensor pins.
@@ -43,7 +44,8 @@ void loop() {
     digitalWrite(TRIG_PIN, LOW);
 
     duration = pulseIn(ECHO_PIN, HIGH);
-    distance = (duration * 0.0343) / 2;
+    distance = (duration * 343UL) / 20000UL;
+
 
     Serial.print("Distance: ");
     Serial.print(distance);
